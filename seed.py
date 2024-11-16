@@ -9,7 +9,7 @@ from models import Group, Student, Teacher, Subject, Grade
 
 fake = Faker()
 
-group_names = ['Group-A', 'Group-B', 'Group-C']
+group_names = ["Group-A", "Group-B", "Group-C"]
 groups = []
 for name in group_names:
     group = Group(group_name=name)
@@ -24,7 +24,16 @@ for _ in range(random.randint(3, 5)):
     teachers.append(teacher)
 session.commit()
 
-subject_names = ['Mathematics', 'Physics', 'Chemistry', 'Biology', 'History', 'Geography', 'Literature', 'Art']
+subject_names = [
+    "Mathematics",
+    "Physics",
+    "Chemistry",
+    "Biology",
+    "History",
+    "Geography",
+    "Literature",
+    "Art",
+]
 subjects = []
 for name in random.sample(subject_names, random.randint(5, 8)):
     subject = Subject(subject_name=name, teacher=random.choice(teachers))
@@ -45,7 +54,7 @@ for student in students:
             grade=random.randint(60, 100),
             date_of=datetime.now() - timedelta(days=random.randint(1, 365)),
             student=student,
-            subject=random.choice(subjects)
+            subject=random.choice(subjects),
         )
         session.add(grade)
 session.commit()
