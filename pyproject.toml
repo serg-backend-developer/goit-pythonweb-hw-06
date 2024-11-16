@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "goit-pythonweb-hw-06"
+version = "0.1.0"
+description = ""
+authors = ["Sergey Shevchenko <sergiishevchenko017@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+sqlalchemy = "^2.0.36"
+faker = "^33.0.0"
+alembic = "^1.14.0"
+psycopg2-binary = "^2.9.10"
+connect = "^0.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
