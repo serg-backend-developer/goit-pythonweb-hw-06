@@ -1,6 +1,6 @@
 import random
 
-from connect import session
+from db import session
 from datetime import datetime, timedelta
 from faker import Faker
 
@@ -24,7 +24,7 @@ for _ in range(random.randint(3, 5)):
     teachers.append(teacher)
 session.commit()
 
-subject_names = ['History', 'Geography', 'Literature', 'Art', 'Mathematics', 'Physics', 'Chemistry', 'Biology']
+subject_names = ['Mathematics', 'Physics', 'Chemistry', 'Biology', 'History', 'Geography', 'Literature', 'Art']
 subjects = []
 for name in random.sample(subject_names, random.randint(5, 8)):
     subject = Subject(subject_name=name, teacher=random.choice(teachers))
